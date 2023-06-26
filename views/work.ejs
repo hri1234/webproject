@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: nexa;
+            background-color: black;
+        }
+        ul{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color: #cac1c1;
+            transition: 0.8s;
+        }
+        section{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 110px 100px;
+        }
+        @media(max-width:600px)
+        {
+            section{
+                padding: 125px 30px;
+            }
+        }
+        header{
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+            padding: 35px 100px 0;
+        }
+        header a{
+            text-transform: capitalize;
+            font-weight: 900;
+            transition: 0.8s;
+        }
+        header h2{
+            text-transform: uppercase;
+
+        }
+        header .nav{
+            display: flex;
+        }
+        header .nav li{
+            margin: 0 15px;
+        }
+        header .nav li:first-child{
+            margin-left: 0;
+        }
+        header .nav li :last-child{
+            margin-right: 0;
+        }
+
+        
+        @media(max-width:1000px){
+            header{
+                padding: 20px 50px;
+            }
+        }
+        @media(max-width:1000px){
+            header{
+                flex-direction: column;
+            }
+            header h2{
+                margin-bottom: 15px;
+            }
+            header .nav li{
+                margin: 0 7px;
+            }
+        }
+
+        .box{
+            position: relative;
+            justify-content: center;
+            min-height: 100vh;
+            color: #fff;
+            text-align: center;
+        }
+        .box video{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .box h1{
+            margin-top: 15px;
+            font-size: 65px;
+            text-transform: uppercase;
+            text-shadow: 0 2px 2px rgba(0,0,0,0.5);
+        }
+        .box h3{
+            margin-bottom: 40px;
+            font-size: 25px;
+        }
+        .box a.boxbtn{
+            padding: 15px 35px;
+            background: transparent;
+            border-radius: 50px;
+            color: #fff;
+            text-transform: uppercase;
+            border: 2px solid #fff;
+            transition: all .5s;
+            transition: 0.5s;
+        }
+        .box a.boxbtn:hover{
+            color: black;
+            font-size: 32px;
+        }
+        .container
+{
+    padding: 10px 10%;
+}
+#about
+{
+    padding: 80px 0;
+    color: #ababab;
+}
+.row
+{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.about-col-1
+{
+    flex-basis: 35%;
+}
+.about-col-1 img
+{
+    width: 100%;
+    border-radius: 15px;
+
+}
+.about-col-2
+{
+    flex-basis: 60%;
+    border: 1px solid rgb(40, 39, 39);
+    border-radius: 20px;
+    padding: 12px;
+    text-align: justify;
+    background-color: rgb(57, 56, 56);
+
+}
+        @media(max-width:800px){
+            .box{
+                min-height: 600px;
+            }
+            .box h1{
+                font-size: 32px;
+            }
+            .box h3{
+                font-size: 20px;
+            }
+            .box a.boxbtn{
+                padding: 15px 40px;
+            }
+        }
+        .btn1{
+            margin: 30px;
+            position: relative;
+            top: 40px;
+            left: 210px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid black;
+            border-radius: 20px;
+            padding: 18px;
+            background-color: transparent;
+            color: #fff;
+            transition: 0.5s;
+            cursor: pointer;
+        }
+        .btn1:hover{
+            background-color: #fb0567;
+            color: black;
+            font: 17px;
+            cursor: pointer;
+        }
+        .nav li a:hover{
+            color: #fff;
+            background-color: crimson;
+            cursor: pointer;
+            font-size: 15px;
+            text-decoration: underline;
+        }
+
+        @media only screen and (max-width: 600px){
+            .about-col-1,.about-col-2{
+        flex-basis: 100%;
+    }
+    .about-col-1{
+        margin-bottom: 30px;
+    }
+    .about-col-2{
+        font-size: 14px;
+    }
+    .tab-links{
+        font-size: 16px;
+        margin-right: 20px;
+    }
+    .btn1{
+        position: relative;
+        left: 55px;
+        top: 18px;
+    }
+    
+    }
+    .copyright{
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: #313231;
+    font-weight: 500;
+    margin-top: 20px;
+    color: #fff;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h2>
+            <a href="/">hritik</a>
+        </h2>
+        <ul class="nav">
+            <li><a href="/">home</a></li>
+            <li><a href="#about">work</li>
+            <li><a href="#about">QRcode</a></li>
+            <li><a href="#about">Weather</a></li>
+        </ul>
+    </header>
+    <section class="box">
+        <video src="video/video2.mp4.mp4" autoplay muted loop></video>
+        <h1>My work</h1>
+        <h3>take a brief toor</h3>
+        <a href="login" class="boxbtn">contact us</a>
+    </section>
+    <br>
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/weather.jpg" alt="not found">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="subtitle">
+                        Weather app
+                    </h1>
+                    <p>
+                        Hello, everyone. First I want to greet every man or women who visited my website. Now i introduce this is my first application . which i was made at last year of my M.C.A . this is a "weather application" this application was generated with the help of node.js, express.js, MongoDB, html,css, react.js 
+                        <h1>about application</h1>
+                        The weather app also provides atmospheric pressure, weather conditions, visibility distance, relative humidity, precipitation in different unites, dew point, wind speed and direction, in addition to ten days in future and hourly weather forcast
+                    </p>
+                    <a href="downloud/weather.rar"><button type="submit" class="btn1">download here</button></a>
+                </div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div id="about" id="qr">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col-1">
+                        <img src="images/qr.png" alt="not found">
+                    </div>
+                    <div class="about-col-2">
+                        <h1 class="subtitle">
+                            QR Code generator
+                        </h1>
+                        <p>
+                            Hello, everyone. First I want to greet every man or women who visited my website. Now i introduce this is my secand application . which i was made with my client request . this is a "QR code generator" this application was generated with the help of node.js, express.js, MongoDB, html,css, react.js 
+                            <h1>about application</h1>
+                            A barcode reader in the camera interprets the bar code, which typically contains a link to view a webpage, send an SMS text message or call a phone number. The technology for QR codes was developed by Densa-Wave, a Toyota subsidiary. The codes were originally used for tracking inventory and required a separate reader app,
+                        </p>
+                        <a href="downloud/r.js/"><button type="submit" class="btn1">download here</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div><br><br>
+            <div id="about" id="chat">
+                <div class="container">
+                    <div class="row">
+                        <div class="about-col-1">
+                            <img src="images/work-1.png" alt="not found">
+                        </div>
+                        <div class="about-col-2">
+                            <h1 class="subtitle">
+                                CHat application
+                            </h1>
+                            <p>
+                                Hello, everyone. First I want to greet every man or women who visited my website. Now i introduce this is my secand application . which i was made with my another client request . this is a "chat application" this application was generated with the help of node.js, express.js, MongoDB, html,css, react.js and Next.js with the help of socket.io and socket.ios 
+                                <h1>about application</h1>
+                                This project provides the instant communication functionality between users. The users have the capability to do one to one communication, group communications and video/audio chat. And the users can receive messages instantly while online and still be able to see the messages sent while they are offline
+                            </p>
+                            <a href="downloud/socket-chat-app.rar"><button type="submit" class="btn1">download here</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p> copyright c hritik. - @ 2023 made with easy  portfolio all rights reserved  </p>
+                  </div>
+
+</body>
+</html>
