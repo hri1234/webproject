@@ -4,12 +4,12 @@ var url = require('url')
 var path = require('path');
 const adminmodel = require('../model/adminmodel');
 
-//router.use((req,res,next)=>{
-    //if(req.session.usn!=undefined && req.session.role=='admin')
-    //next()
-    //else
-  //  res.redirect('/login')
-//})
+router.use((req,res,next)=>{
+    if(req.session.usn!=undefined && req.session.role=='admin')
+    next()
+    else
+    res.redirect('/login')
+})
 
 
 router.get('/', function(req, res, next) {
