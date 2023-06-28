@@ -5,18 +5,15 @@ var path = require('path');
 const adminmodel = require('../model/adminmodel');
 
 router.use((req,res,next)=>{
-    if(req.session.usn!=undefined && req.session.role=='admin')
+    if  (req.session.usn!=undefined && req.session.role=='admin')
     next()
     else
     res.redirect('/login')
 })
 
-
 router.get('/', function(req, res, next) {
-     console.log(req.session.Username)
-    res.render('admin',{'Username':req.session.usn});
-     res.render('admin');
-
+     console.log(req.session.usn)
+    res.render('admin',{'username':req.session.usn});
 });
 
 

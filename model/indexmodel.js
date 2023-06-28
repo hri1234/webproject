@@ -2,7 +2,7 @@ const db= require('./connection')
 function indexmodel(){
     this.registration=(userDetails,cb)=>{
         userDetails.status=1
-        userDetails.role='admin'
+        userDetails.role='user'
         userDetails.dt=Date()
         userDetails.month='june'
         db.collection('hritik').insertOne

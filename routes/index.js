@@ -1,7 +1,7 @@
 var express = require('express');
 const indexmodel = require('../model/indexmodel');
 var router = express.Router();
-
+const  { body, validationResult } = require('express-validator');
 
 /* GET home page. */
 router.use('/login',(req,res,next)=>{
@@ -13,7 +13,8 @@ router.use('/login',(req,res,next)=>{
 
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
-});
+})
+
 
 router.get('/work',(req ,res ,next)=>{
   res.render('work',{title:'express'})
@@ -25,9 +26,33 @@ router.get('/reg',(req, res, next)=>{
 router.post('/reg',(req,res,next)=>{
   console.log(req.body)
   indexmodel.registration(req.body,(result)=>{
-    res.render('login',{title:'express'})
-  });
-});
+    res.render('login',{title:'expres'})
+  })
+
+})
+  //'/reg',
+//  body('email').isEmail(),
+ // body('password').isLength({min: 6}),
+  //async (req, res, next) => {
+    //const errors = validationResult(req)
+
+ //   try {
+  //    if (!errors.isEmpty() && errors.errors[0].param === 'email') {
+    //    return res.status(400).send('Invalid email address. Please try again.')
+     // }
+      //if (!errors.isEmpty() && errors.errors[0].param === 'password') {
+       // return res
+        //  .status(400)
+          //.send('Password must be longer than 6 characters.')
+     // }
+   //  const user = await indexmodel.registration(req.body)
+     // req.login(user, err => (err ? next(err) : res.json(user)))
+  //  } catch (err) {
+    //  next(err)
+    //}
+  //}
+//)
+
 
 router.get('/login',(req,res,next)=>{
   res.render('login',{title:'express'})

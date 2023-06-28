@@ -1,9 +1,16 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
+//router.use((req,res,next)=>{
+  //if(req.session.usn!=undefined && req.session.role=='user')
+  //next()
+  //else
+  //res.redirect('/login')
+//})
+ 
+
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+  res.render('users',{'usn':req.session.usn});
 });
 
 module.exports = router;
